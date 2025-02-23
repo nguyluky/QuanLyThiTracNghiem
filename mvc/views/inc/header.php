@@ -35,31 +35,31 @@
                             </div>
                             <div class="col-2">
                                 <a class="text-xwork" data-toggle="theme"
-                                    data-theme="./public/css/themes/xwork.min.css" href="javascript:void(0)">
+                                    data-theme="/public/css/themes/xwork.min.css" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2">
                                 <a class="text-xplay" data-toggle="theme"
-                                    data-theme="./public/css/themes/xplay.min.css" href="javascript:void(0)">
+                                    data-theme="/public/css/themes/xplay.min.css" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2">
                                 <a class="text-xeco" data-toggle="theme"
-                                    data-theme="./public/css/themes/xeco.min.css" href="javascript:void(0)">
+                                    data-theme="/public/css/themes/xeco.min.css" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2">
                                 <a class="text-xsmooth" data-toggle="theme"
-                                    data-theme="./public/css/themes/xsmooth.min.css" href="javascript:void(0)">
+                                    data-theme="/public/css/themes/xsmooth.min.css" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
                             <div class="col-2">
                                 <a class="text-xinspire" data-toggle="theme"
-                                    data-theme="./public/css/themes/xinspire.min.css" href="javascript:void(0)">
+                                    data-theme="/public/css/themes/xinspire.min.css" href="javascript:void(0)">
                                     <i class="fa fa-2x fa-circle"></i>
                                 </a>
                             </div>
@@ -85,7 +85,7 @@
                     <div class="bg-body-light rounded-top fw-semibold text-center p-3 border-bottom">
                         <span class="avatar-Account">
                             <img class="img-avatar img-avatar48 img-avatar-thumb"
-                                src="./public/media/avatars/<?php echo $_SESSION["avatar"] == '' ? "avatar2.jpg" : $_SESSION["avatar"] ?>"
+                                src="/public/media/avatars/<?php echo $_SESSION["avatar"] == '' ? "avatar2.jpg" : $_SESSION["avatar"] ?>"
                                 alt="">
                         </span>
                         <div class="pt-2 load-nameAccount">
@@ -95,10 +95,10 @@
                         </div>
                     </div>
                     <div class="p-2">
-                        <a class="dropdown-item" href="./account">
+                        <a class="dropdown-item" href="/account">
                             <i class="si si-settings me-2 fa-fw icon-dropdown-item"></i> Tài khoản
                         </a>
-                        <a class="dropdown-item" href="./auth/logout">
+                        <a class="dropdown-item" href="/auth/logout">
                             <i class="si si-logout me-2 fa-fw icon-dropdown-item"></i> Đăng xuất
                         </a>
                     </div>

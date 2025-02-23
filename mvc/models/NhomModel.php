@@ -187,6 +187,7 @@ class NhomModel extends DB
         $sql = "SELECT monhoc.mamonhoc,monhoc.tenmonhoc,nhom.manhom, nhom.tennhom, namhoc, hocky, nhom.giangvien, nguoidung.hoten, nguoidung.avatar
         FROM nhom, nguoidung, monhoc
         WHERE nguoidung.id = nhom.giangvien AND monhoc.mamonhoc = nhom.mamonhoc AND nhom.manhom = $manhom";
+        // error_log($sql);
         $result = mysqli_query($this->con, $sql);
         return mysqli_fetch_assoc($result);
     }

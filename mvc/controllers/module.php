@@ -4,10 +4,12 @@ require_once 'vendor/phpoffice/phpexcel/Classes/PHPExcel/IOFactory.php';
 class Module extends Controller
 {
     public $nhomModel;
+    public $diemdanhModel;
 
     function __construct()
     {
         $this->nhomModel = $this->model("NhomModel");
+        $this->diemdanhModel = $this->model("DiemDanhModel");
         parent::__construct();
         require_once "./mvc/core/Pagination.php";
     }
@@ -50,6 +52,84 @@ class Module extends Controller
             ]);
         } else
             $this->view("single_layout", ["Page" => "error/page_403", "Title" => "Lỗi !"]);
+    }
+
+    public function diemdanh($manhom) {
+        $havePremission = AuthCore::checkPermission("diemdanh", "view");
+        if (!$havePremission) {
+            $this->view("single_layout", ["Page" => "error/page_404","Title" => "Lỗi !"]);
+            return;
+        }
+
+        $this->view("main_layout", [
+            "Page" => "diemdanh",
+            "Title" => "Điểm danh",
+            "Plugin" => [
+                "datepicker" => 1,
+                "flatpickr" => 1,
+                "pagination" => [],
+                "jquery-validate" => 1,
+            ],
+            "Script" => "diemdanh",
+            "nhomId" => $manhom
+        ]);
+    }
+
+    public function diemdanh_detail($diemdanhId) {
+        $havePremission = AuthCore::checkPermission("diemdanh", "view");
+        if (!$havePremission) {
+            $this->view("single_layout", ["Page" => "error/page_404","Title" => "Lỗi !"]);
+            return;
+        }
+
+        $this->view("main_layout", [
+            "Page" => "diemdanh_detail",
+            "Title" => "Chi tiết điểm danh",
+            "Plugin" => [
+                "ckeditor" => 1,
+                "select" => 1,
+                "notify" => 1,
+                "sweetalert2" => 1,
+                "pagination" => [],
+                "jquery-validate" => 1,
+            ],
+            "Script" => "diemdanh_detail",
+            "diemdanhId" => $diemdanhId
+        ]);
+    }
+
+    public function appDiemdanh() {
+        // TODO: remove command
+        // $havePremission = AuthCore::checkPermission("diemdanh", "create");
+        // if (!$havePremission) {
+        //     echo json_encode(false);
+        //     return;
+        // }
+
+        if ($_SERVER['REQUEST_METHOD'] != "POST") {
+            echo json_encode(false);
+            return;
+        }
+
+        $start_time = $_POST["start_time"];
+        $end_time = $_POST["end_time"];
+        $manhom = $_POST["manhom"];
+        $title = $_POST["title"];
+
+        $result = $this->diemdanhModel->create($title, $manhom, $start_time, $end_time, '1234567');
+        echo $start_time." ".$end_time." ".$manhom." ".$title;
+    }
+
+    public function getDiemdanhDetail() {
+        $havePremission = AuthCore::checkPermission("diemdanh", "view");
+        if (!$havePremission) {
+            echo json_encode(false);
+            return;
+        }
+
+        $diemdanhId = $_POST["diemdanhId"];
+        $result = $this->diemdanhModel->getById($diemdanhId);
+        echo json_encode($result);
     }
 
     public function loadData()
@@ -123,6 +203,18 @@ class Module extends Controller
             echo json_encode($result);
         } else
             echo json_encode(false);
+    }
+
+    public function getAllDiemDanh() {
+        // $havePremission = AuthCore::checkPermission("diemdanh", "view");
+        // if (!$havePremission) {
+        //     $this->view("single_layout", ["Page" => "error/page_404","Title" => "Lỗi !"]);
+        //     return;
+        // }
+
+        $manhom = $_POST["manhom"];
+        $result = $this->diemdanhModel->getAll($manhom);
+        echo json_encode($result);
     }
 
 

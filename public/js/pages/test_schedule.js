@@ -43,7 +43,7 @@ function showData(data) {
             <div class="d-md-flex justify-content-md-between align-items-md-center">
                 <div class="p-1 p-md-3">
                     <h3 class="h4 fw-bold mb-3">
-                        <a href="./test/start/${
+                        <a href="/test/start/${
                           test.made
                         }" class="text-dark link-fx">${test.tende}</a>
                     </h3>
@@ -62,7 +62,7 @@ function showData(data) {
                 </div>
                 <div class="p-1 p-md-3">
                 ${htmlTestState}
-                    <a class="btn btn-alt-info rounded-pill px-3 me-1 my-1" href="./test/start/${
+                    <a class="btn btn-alt-info rounded-pill px-3 me-1 my-1" href="/test/start/${
                       test.made
                     }">Xem chi tiết</a>
                 </div>

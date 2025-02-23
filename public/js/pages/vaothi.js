@@ -4,14 +4,14 @@ $(document).ready(function () {
         e.preventDefault();
         $.ajax({
             type: "post",
-            url: "./test/startTest",
+            url: "/test/startTest",
             data: {
                 made: made,
             },
             dataType: "json",
             success: function (response) {
                 if (response) {
-                    location.href = `./test/taketest/${made}`;
+                    location.href = `/test/taketest/${made}`;
                 } else {
                     Dashmix.helpers("jq-notify", {
                         type: "danger",
@@ -28,7 +28,7 @@ $(document).ready(function () {
         let makq = $(this).data("id");
         $.ajax({
             type: "post",
-            url: "./test/getResultDetail",
+            url: "/test/getResultDetail",
             data: {
                 makq: makq,
             },

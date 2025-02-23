@@ -90,7 +90,7 @@ $(document).ready(function () {
     let check = true;
     $.ajax({
       type: "post",
-      url: "./subject/checkSubject",
+      url: "/subject/checkSubject",
       data: {
         mamon: mamon,
       },
@@ -115,7 +115,7 @@ $(document).ready(function () {
     if ($(".form-add-subject").valid() && checkTonTai(mamon)) {
       $.ajax({
         type: "post",
-        url: "./subject/add",
+        url: "/subject/add",
         data: {
           mamon: mamon,
           tenmon: $("#tenmonhoc").val(),
@@ -153,7 +153,7 @@ $(document).ready(function () {
     let mamon = $(this).data("id");
     $.ajax({
       type: "post",
-      url: "./subject/getDetail",
+      url: "/subject/getDetail",
       data: {
         mamon: mamon,
       },
@@ -188,7 +188,7 @@ $(document).ready(function () {
     if ($(".form-add-subject").valid() && checkTonTai(mamon)) {
       $.ajax({
         type: "post",
-        url: "./subject/update",
+        url: "/subject/update",
         data: {
           id: mamon,
           mamon: $("#mamonhoc").val(),
@@ -254,7 +254,7 @@ $(document).ready(function () {
       if (t.value == true) {
         $.ajax({
           type: "post",
-          url: "./subject/delete",
+          url: "/subject/delete",
           data: {
             mamon: trid,
           },
@@ -293,7 +293,7 @@ $(document).ready(function () {
   function showChapter(mamonhoc) {
     $.ajax({
       type: "post",
-      url: "./subject/getAllChapter",
+      url: "/subject/getAllChapter",
       data: {
         mamonhoc: mamonhoc,
       },
@@ -326,7 +326,7 @@ $(document).ready(function () {
           });
         } else {
           html += `<tr><td class="text-center fs-sm" colspan="3">
-                    <img style="width:180px" src="./public/media/svg/empty_data.png" alt=""/>
+                    <img style="width:180px" src="/public/media/svg/empty_data.png" alt=""/>
                     <p class="text-center mt-3">Không có dữ liệu</p>
                     </td>
                     </tr>`;
@@ -354,7 +354,7 @@ $(document).ready(function () {
     } else {
       $.ajax({
         type: "post",
-        url: "./subject/addChapter",
+        url: "/subject/addChapter",
         data: {
           mamonhoc: mamonhoc,
           tenchuong: $("#name_chapter").val(),
@@ -378,7 +378,7 @@ $(document).ready(function () {
     let machuong = $(this).data("id");
     $.ajax({
       type: "post",
-      url: "./subject/chapterDelete",
+      url: "/subject/chapterDelete",
       data: {
         machuong: machuong,
       },
@@ -415,7 +415,7 @@ $(document).ready(function () {
     e.preventDefault();
     $.ajax({
       type: "post",
-      url: "./subject/updateChapter",
+      url: "/subject/updateChapter",
       data: {
         machuong: $("#machuong").val(),
         tenchuong: $("#name_chapter").val(),

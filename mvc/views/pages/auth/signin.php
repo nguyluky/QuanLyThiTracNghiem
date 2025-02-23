@@ -26,11 +26,11 @@
                                     <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Đăng nhập
                                 </button>
                                 <a class="btn btn-alt-secondary me-1 my-3 w-100" href="<?php echo $data["authUrl"]?>">
-                                    <img alt="Logo" src="./public/media/svg/google-icon.svg"
+                                    <img alt="Logo" src="/public/media/svg/google-icon.svg"
                                         style="height:15px;margin-right:20px">Đăng nhập với Google</a>
                                 <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                                     <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1"
-                                        href="./auth/recover">
+                                        href="/auth/recover">
                                         <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Quên mật khẩu
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="#">

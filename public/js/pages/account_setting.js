@@ -70,7 +70,7 @@ $("#update-password").click(function (e) {
     let newPass = $("#new-password").val();
     $.ajax({
       type: "post",
-      url: "./account/changePassword",
+      url: "/account/changePassword",
       data: {
         matkhaucu: currentPass,
         matkhaumoi: newPass,
@@ -146,7 +146,7 @@ $("#update-profile").click(function (e) {
     if ($(".form-update-profile").valid()) {
       $.ajax({
         type: "post",
-        url: "./account/changeProfile",
+        url: "/account/changeProfile",
         data: {
           hoten: $("#dm-profile-edit-name").val(),
           email: $("#dm-profile-edit-email").val(),
@@ -191,7 +191,7 @@ function saveFileAvatar() {
     const dk = form_data.append("file-img", file_data[0]);
     $.ajax({
       type: "post",
-      url: "./account/uploadFile",
+      url: "/account/uploadFile",
       data: form_data,
       contentType: false,
       processData: false,

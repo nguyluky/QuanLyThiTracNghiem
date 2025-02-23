@@ -64,7 +64,7 @@ $("#btnRecover").click(function (e) {
     let mail = $("#reminder-credential").val();
     $.ajax({
       type: "post",
-      url: "./auth/checkEmail",
+      url: "/auth/checkEmail",
       data: {
         email: mail,
       },
@@ -80,7 +80,7 @@ $("#btnRecover").click(function (e) {
         } else {
           $.ajax({
             type: "post",
-            url: "./auth/sendOptAuth",
+            url: "/auth/sendOptAuth",
             data: {
               email: mail,
             },
@@ -100,7 +100,7 @@ $("#opt").click(function (e) {
     let opt = $("#txtOpt").val();
     $.ajax({
       type: "post",
-      url: "./auth/checkOpt",
+      url: "/auth/checkOpt",
       data: {
         opt: opt,
       },
@@ -127,7 +127,7 @@ $("#btnChange").click(function (e) {
     let passwordNew = $("#passwordNew").val();
     $.ajax({
       type: "post",
-      url: "./auth/changePassword",
+      url: "/auth/changePassword",
       data: {
         password: passwordNew,
       },

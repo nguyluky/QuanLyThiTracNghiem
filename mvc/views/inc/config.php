@@ -27,6 +27,12 @@ $GLOBALS['navbar'] = [
         'name'  => 'Quản lý',
         'type'  => 'heading',
         'navbarItem' => [
+            // array(
+            //     'name'=> 'Diễm danh',
+            //     'icon' => 'fa fa-calendar-check',
+            //     'url'=> 'diemdanh',
+            //     'role' => 'diemdanh'
+            // ),
             array(
                 'name'  => 'Nhóm học phần',
                 'icon'  => 'fa fa-layer-group',
@@ -121,7 +127,7 @@ function build_navbar() {
                 $link_name = '<span class="nav-main-link-name">' . $navItem['name'] . '</span>' . "\n";
                 $link_icon = '<i class="nav-main-link-icon ' . $navItem['icon'] . '"></i>' . "\n";
                 $html .= "<li class=\"nav-main-item\">"."\n";
-                $html .= "<a class=\"nav-main-link".($current_page == $navItem['url'] ? " active" : "")."\" href=\"./".$navItem['url']."\">";
+                $html .= "<a class=\"nav-main-link".($current_page == $navItem['url'] ? " active" : "")."\" href=\"/".$navItem['url']."\">";
                 $html .= $link_icon;
                 $html .= $link_name;
                 $html .= "</a></li>\n";

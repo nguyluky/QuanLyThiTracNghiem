@@ -140,7 +140,7 @@ class Pagination {
     let self = this;
     const { controller } = args;
     $.ajax({
-      url: `./${controller}/pagination`,
+      url: `/${controller}/pagination`,
       method: "post",
       data: {
         args: JSON.stringify(args),
@@ -160,7 +160,7 @@ class Pagination {
     const { controller } = args;
     let self = this;
     $.ajax({
-      url: `./${controller}/getTotalPages`,
+      url: `/${controller}/getTotalPages`,
       method: "post",
       data: {
         args: JSON.stringify(args),

@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div  data-role="thongbao" và data-action="create" class="col-6 d-flex align-items-center justify-content-end gap-3">
-                <a class="btn btn-hero btn-primary" href="./teacher_announcement/add"><i class="fa fa-fw fa-plus me-1"></i> Tạo thông báo</a>
+                <a class="btn btn-hero btn-primary" href="/teacher_announcement/add"><i class="fa fa-fw fa-plus me-1"></i> Tạo thông báo</a>
             </div>
         </div>
     </form>

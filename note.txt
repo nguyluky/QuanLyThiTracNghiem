@@ -1,0 +1,4 @@
+[ ] Lỗi khi thêm học sinh nhưng mã sinh viên không tồn tại
+[ ] Chưa có hàm add thông báo
+[ ] Chưa có thông báo lỗi là mình đã làm rồi
+[ ] Chưa có thông báo nếu ngân hàng đền không đủ câu hỏi

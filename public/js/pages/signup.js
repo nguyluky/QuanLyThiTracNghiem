@@ -52,7 +52,7 @@ $(".js-validation-signup").submit(function (e) {
     if($(".js-validation-signup").valid()) {
         $.ajax({
             type: "post",
-            url: "./auth/addUser",
+            url: "/auth/addUser",
             data: {
                 fullname: $('#signup-username').val(),
                 email: $('#signup-email').val(),

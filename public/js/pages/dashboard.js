@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.ajax({
         type: "post",
-        url: "./dashboard/checkEmail",
+        url: "/dashboard/checkEmail",
         success: function (response) {
             if(response == ""){
                 let i = document.getElementById("modal-onboarding");
@@ -25,7 +25,7 @@ function validateEmail($email) {
 function checkEmailExist(email){
     $.ajax({
         type: "post",
-        url: "./dashboard/checkEmailExist",
+        url: "/dashboard/checkEmailExist",
         data: {
             email: email
         },
@@ -43,7 +43,7 @@ function checkEmailExist(email){
 function updateEmail(email){
     $.ajax({
         type: "post",
-        url: "./dashboard/updateEmail",
+        url: "/dashboard/updateEmail",
         data: {
             email: email
         },

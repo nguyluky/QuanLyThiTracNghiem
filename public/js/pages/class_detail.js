@@ -70,7 +70,7 @@ const showData = function (students) {
           <tr>
               <td class="text-center">${offset + index++}</td>
               <td class="fs-sm d-flex align-items-center">
-                      <img class="img-avatar img-avatar48 me-3" src="./public/media/avatars/${student.avatar == null
+                      <img class="img-avatar img-avatar48 me-3" src="/public/media/avatars/${student.avatar == null
           ? `avatar2.jpg`
           : student.avatar
         }"
@@ -139,7 +139,7 @@ $(document).ready(function () {
       if (t.value == true) {
         $.ajax({
           type: "post",
-          url: "./module/kickUser",
+          url: "/module/kickUser",
           data: {
             manhom: manhom,
             manguoidung: mssv,
@@ -157,7 +157,7 @@ $(document).ready(function () {
   function loadList() {
     $.ajax({
       type: "post",
-      url: "./module/getSvList",
+      url: "/module/getSvList",
       data: {
         manhom: manhom,
       },
@@ -178,7 +178,7 @@ $(document).ready(function () {
                     <div class="d-md-flex justify-content-md-between align-items-md-center">
                         <div class="p-1 p-md-2">
                             <h3 class="h4 fw-bold mb-3">
-                                <a href="./test/detail/${test.made}" class="text-dark link-fx">${test.tende}</a>
+                                <a href="/test/detail/${test.made}" class="text-dark link-fx">${test.tende}</a>
                             </h3>
                             <p class="fs-sm text-muted mb-0">
                                 <i class="fa fa-clock me-1"></i> Diễn ra từ <span>${test.thoigianbatdau}</span> đến <span>${test.thoigianketthuc}</span>
@@ -198,7 +198,7 @@ $(document).ready(function () {
   {
       $.ajax({
           type: "post",
-          url: "./teacher_announcement/getAnnounce",
+          url: "/teacher_announcement/getAnnounce",
           data: {
               manhom: manhom
           },
@@ -217,7 +217,7 @@ $(document).ready(function () {
             <li>
             <a class="d-flex text-dark py-2" href="./teacher_announcement/update/${announce.matb}">
                 <div class="flex-shrink-0 mx-3">
-                    <img class="img-avatar img-avatar48" src="./public/media/avatars/${announce.avatar == null ? "avatar2.jpg" : announce.avatar}" alt="">
+                    <img class="img-avatar img-avatar48" src="/public/media/avatars/${announce.avatar == null ? "avatar2.jpg" : announce.avatar}" alt="">
                 </div>
                 <div class="flex-grow-1 fs-sm pe-2">
                     <div class="fw-semibold">${announce.noidung}</div>
@@ -236,7 +236,7 @@ $(document).ready(function () {
   function loadDataTest(manhom) {
     $.ajax({
       type: "post",
-      url: "./test/getTestGroup",
+      url: "/test/getTestGroup",
       data: {
         manhom: manhom,
       },
@@ -258,7 +258,7 @@ $(document).ready(function () {
   function showInvitedCode() {
     $.ajax({
       type: "post",
-      url: "./module/getInvitedCode",
+      url: "/module/getInvitedCode",
       data: {
         manhom: manhom,
       },
@@ -272,7 +272,7 @@ $(document).ready(function () {
     e.preventDefault();
     $.ajax({
       type: "post",
-      url: "./module/updateInvitedCode",
+      url: "/module/updateInvitedCode",
       data: {
         manhom: manhom
       },
@@ -290,7 +290,7 @@ $(document).ready(function () {
   function checkAcc(mssv) {
     $.ajax({
       type: "post",
-      url: "./module/checkAcc",
+      url: "/module/checkAcc",
       data: {
         mssv: mssv,
         manhom: manhom
@@ -319,7 +319,7 @@ $(document).ready(function () {
     e.preventDefault();
     $.ajax({
       type: "post",
-      url: "./module/addSvGroup",
+      url: "/module/addSvGroup",
       data: {
         manhom: manhom,
         mssv: $("#mssv").val(),
@@ -341,7 +341,7 @@ $(document).ready(function () {
     if ($("#addSvThuCong").valid()) {
       $.ajax({
         type: "post",
-        url: "./module/addSV",
+        url: "/module/addSV",
         data: {
           manhom: manhom,
           mssv: $("#mssv").val(),
@@ -363,7 +363,7 @@ $(document).ready(function () {
   $("#exportStudents").click(function () {
     $.ajax({
       type: "post",
-      url: "./module/exportExcelStudentS",
+      url: "/module/exportExcelStudentS",
       data: {
         manhom: manhom,
       },
@@ -382,7 +382,7 @@ $(document).ready(function () {
   $("#exportScores").click(function () {
     $.ajax({
       type: "post",
-      url: "./test/getMarkOfAllTest",
+      url: "/test/getMarkOfAllTest",
       data: {
         manhom: manhom,
       },
@@ -410,7 +410,7 @@ $(document).ready(function () {
       formData.append("fileToUpload", file);
       $.ajax({
         type: "post",
-        url: "./user/addExcel",
+        url: "/user/addExcel",
         data: formData,
         contentType: false,
         processData: false,
@@ -431,7 +431,7 @@ $(document).ready(function () {
   function addExcel(data, password) {
     $.ajax({
       type: "post",
-      url: "./user/addFileExcelGroup",
+      url: "/user/addFileExcelGroup",
       data: {
         listuser: data,
         group: manhom,
@@ -451,7 +451,7 @@ $(document).ready(function () {
   function getGroupSize(id) {
     $.ajax({
       type: "post",
-      url: "./module/getGroupSize",
+      url: "/module/getGroupSize",
       data: {
         manhom: id,
       },

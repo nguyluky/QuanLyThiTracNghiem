@@ -72,7 +72,7 @@ const showData = function (users) {
                               <strong>${user.id}</strong>
                           </td>
                           <td class="fs-sm d-flex align-items-center">
-                              <img class="img-avatar img-avatar48 me-3" src="./public/media/avatars/${user.avatar == null ? `avatar2.jpg`: user.avatar}" alt="">
+                              <img class="img-avatar img-avatar48 me-3" src="/public/media/avatars/${user.avatar == null ? `avatar2.jpg`: user.avatar}" alt="">
                               <div class="d-flex flex-column">
                                   <strong class="text-primary">${
                                     user.hoten
@@ -144,7 +144,7 @@ $(document).ready(function () {
     let result = true;
     $.ajax({
       type: "post",
-      url: "./user/checkUser",
+      url: "/user/checkUser",
       data: {
         mssv: id,
         email: email,
@@ -165,7 +165,7 @@ $(document).ready(function () {
     let result = true;
     $.ajax({
       type: "post",
-      url: "./user/checkUser",
+      url: "/user/checkUser",
       data: {
         mssv: id,
         email: email,
@@ -190,7 +190,7 @@ $(document).ready(function () {
     if ($(".form-add-user").valid() && checkUser(mssv,email)) {
       $.ajax({
         type: "post",
-        url: "./user/add",
+        url: "/user/add",
         data: {
           masinhvien: $("#masinhvien").val(),
           hoten: $("#user_name").val(),
@@ -220,7 +220,7 @@ $(document).ready(function () {
     $("#btn-update-user").data("id", id);
     $.ajax({
       type: "post",
-      url: "./user/getDetail",
+      url: "/user/getDetail",
       data: {
         id: id,
       },
@@ -249,7 +249,7 @@ $(document).ready(function () {
     if(checkUserUpdate(mssv,email)) {
       $.ajax({
         type: "post",
-        url: "./user/update",
+        url: "/user/update",
         data: {
           id: $(this).data("id"),
           hoten: $("#user_name").val(),
@@ -301,7 +301,7 @@ $(document).ready(function () {
       if (t.value == true) {
         $.ajax({
           type: "post",
-          url: "./user/deleteData",
+          url: "/user/deleteData",
           data: {
             id: trid,
           },
@@ -328,7 +328,7 @@ $(document).ready(function () {
       formData.append("fileToUpload", file);
       $.ajax({
         type: "post",
-        url: "./user/addExcel",
+        url: "/user/addExcel",
         data: formData,
         contentType: false,
         processData: false,
@@ -350,7 +350,7 @@ $(document).ready(function () {
   function addExcel(data,password) {
     $.ajax({
       type: "post",
-      url: "./user/addFileExcel",
+      url: "/user/addFileExcel",
       data: {
         listuser: data,
         password: password

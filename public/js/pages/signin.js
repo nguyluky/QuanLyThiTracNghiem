@@ -36,7 +36,7 @@ $(".js-validation-signin").submit(function (e) {
   if ($(".js-validation-signin").valid()) {
     $.ajax({
       type: "POST",
-      url: "./auth/checkLogin",
+      url: "/auth/checkLogin",
       data: {
         masinhvien: $("#login-username").val(),
         password: $("#login-password").val(),
@@ -45,7 +45,7 @@ $(".js-validation-signin").submit(function (e) {
       success: function (response) {
         console.log(response.valid);
         if (response.valid == "true") {
-          location.href = "./dashboard";
+          location.href = "/dashboard";
         } else {
           Dashmix.helpers("jq-notify", {
             type: "danger",

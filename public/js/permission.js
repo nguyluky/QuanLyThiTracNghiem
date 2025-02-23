@@ -1,5 +1,5 @@
 let role = [];
-$.getJSON("./account/getRole", function (data, textStatus, jqXHR) {
+$.getJSON("/account/getRole", function (data, textStatus, jqXHR) {
   role = data;
 });
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
     e.preventDefault();
     $.ajax({
       type: "post",
-      url: "./teacher_announcement/getNotifications",
+      url: "/teacher_announcement/getNotifications",
       dataType: "json",
       success: function (data) {
         showListNotifications(data);
@@ -52,7 +52,7 @@ $(document).ready(function () {
                 <li>
                     <a class="d-flex text-dark py-2" href="javascript:void(0)">
                         <div class="flex-shrink-0 mx-3">
-                            <img class="img-avatar img-avatar48" src="./public/media/avatars/${
+                            <img class="img-avatar img-avatar48" src="/public/media/avatars/${
                               notification.avatar
                             }" alt="">
                         </div>

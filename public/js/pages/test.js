@@ -44,7 +44,7 @@ function showListTest(tests) {
                     <div class="d-md-flex justify-content-md-between align-items-md-center">
                         <div class="p-1 p-md-3">
                             <h3 class="h4 fw-bold mb-3">
-                                <a href="./test/detail/${test.made}" class="text-dark link-fx">${test.tende}</a>
+                                <a href="/test/detail/${test.made}" class="text-dark link-fx">${test.tende}</a>
                             </h3>
                             <p class="fs-sm text-muted mb-2">
                                 <i class="fa fa-layer-group me-1"></i></i> Giao cho học phần <strong data-bs-toggle="tooltip" data-bs-animation="true" data-bs-placement="top" title="${test.nhom}" style="cursor:pointer">${test.tenmonhoc} - NH${test.namhoc} - HK${test.hocky}</strong>
@@ -55,10 +55,10 @@ function showListTest(tests) {
                         </div>
                         <div class="p-1 p-md-3">
                             ${htmlTestState}
-                            <a class="btn btn-sm btn-alt-success rounded-pill px-3 me-1 my-1" href="./test/detail/${test.made}">
+                            <a class="btn btn-sm btn-alt-success rounded-pill px-3 me-1 my-1" href="/test/detail/${test.made}">
                                 <i class="fa fa-eye opacity-50 me-1"></i> Xem chi tiết
                             </a>
-                            <a data-role="dethi" data-action="update" class="btn btn-sm btn-alt-primary rounded-pill px-3 me-1 my-1" href="./test/update/${test.made}">
+                            <a data-role="dethi" data-action="update" class="btn btn-sm btn-alt-primary rounded-pill px-3 me-1 my-1" href="/test/update/${test.made}">
                                 <i class="fa fa-wrench opacity-50 me-1"></i> Chỉnh sửa
                             </a>
                             <a data-role="dethi" data-action="delete" class="btn btn-sm btn-alt-danger rounded-pill px-3 my-1 btn-delete" href="javascript:void(0)" data-id="${test.made}">
@@ -108,7 +108,7 @@ $(document).ready(function () {
             if (t.value == true) {
                 $.ajax({
                     type: "post",
-                    url: "./test/delete",
+                    url: "/test/delete",
                     data: {
                         made: $(this).data("id")
                     },

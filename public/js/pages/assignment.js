@@ -138,7 +138,7 @@ $(document).ready(function(){
         let giangvien = $("#giang-vien").val();
         $.ajax({
             type: "post",
-            url: "./assignment/getAssignmentByUser",
+            url: "/assignment/getAssignmentByUser",
             data: {
                 id: giangvien
             },
@@ -171,7 +171,7 @@ $(document).ready(function(){
     function addAssignment(giangvien, listSubject) {
         $.ajax({
             type: "post",
-            url: "./assignment/addAssignment",
+            url: "/assignment/addAssignment",
             data: {
                 magiangvien: giangvien,
                 listSubject: listSubject
@@ -198,7 +198,7 @@ $(document).ready(function(){
     function deleteAssignmentUser(giangvien){
         $.ajax({
             type: "post",
-            url: "./assignment/deleteAll",
+            url: "/assignment/deleteAll",
             data: {
               id: giangvien,
             },
@@ -209,7 +209,7 @@ $(document).ready(function(){
     function clearAllAndAddAssignmentUser (giangvien, listSubject) {
         $.ajax({
             type: "post",
-            url: "./assignment/deleteAll",
+            url: "/assignment/deleteAll",
             data: {
               id: giangvien,
             },
@@ -252,7 +252,7 @@ $(document).ready(function(){
             if(t.value == true){
                 $.ajax({
                     type: "post",
-                    url: "./assignment/delete",
+                    url: "/assignment/delete",
                     data: {
                         id: id,
                         mamon: mamon

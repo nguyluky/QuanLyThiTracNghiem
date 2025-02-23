@@ -7,7 +7,7 @@
                 </div>
                 <h1 class="fw-bold mt-5 mb-2">Oops.. You just found an error page..</h1>
                 <h2 class="fs-4 fw-medium text-muted mb-5">Chúng tôi xin lỗi nhưng trang bạn đang tìm kiếm không được tìm thấy ..</h2>
-                <a class="btn btn-lg btn-alt-secondary" href="./">
+                <a class="btn btn-lg btn-alt-secondary" href="/">
                     <i class="fa fa-arrow-left opacity-50 me-1"></i> Trở lại trang chủ
                 </a>
             </div>

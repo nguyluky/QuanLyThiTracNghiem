@@ -14,7 +14,7 @@
                         <button type="button" class="btn-block-option" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSetting" aria-controls="offcanvasSetting">
                             <i class="si si-info"></i>
                         </button>
-                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Chỉnh sửa đề thi" class="btn-block-option" href="./test/update/<?php echo $data["Test"]["made"] ?>" role="button"><i class="si si-pencil"></i></a>
+                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Chỉnh sửa đề thi" class="btn-block-option" href="/test/update/<?php echo $data["Test"]["made"] ?>" role="button"><i class="si si-pencil"></i></a>
                         <button data-bs-toggle="tooltip" data-bs-placement="top" title="Toàn màn hình" type="button" class="btn-block-option" data-toggle="block-option" data-action="fullscreen_toggle"></button>
                     </div>
                 </li>
@@ -243,7 +243,7 @@
             <ul class="nav nav-pills nav-justified push">
                 <?php
                 foreach ($data["Test"]["nhom"] as $nhom) {
-                    echo '<li class="nav-item me-1 mb-2"><a class="nav-link border text-muted" href="./module/detail/' . $nhom['manhom'] . '">' . $nhom['tennhom'] . '</a></li>';
+                    echo '<li class="nav-item me-1 mb-2"><a class="nav-link border text-muted" href="/module/detail/' . $nhom['manhom'] . '">' . $nhom['tennhom'] . '</a></li>';
                 }
                 ?>
             </ul>

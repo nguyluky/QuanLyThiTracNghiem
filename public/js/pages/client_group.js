@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('.btn-join-group').on("click", function () {
         $.ajax({
             type: "post",
-            url: "./client/joinGroup",
+            url: "/client/joinGroup",
             data: {
                 mamoi: $("#mamoi").val()
             },
@@ -29,7 +29,7 @@ $(document).ready(function () {
     function loadDataGroups(hienthi) {
         $.ajax({
             type: "post",
-            url: "./client/loadDataGroups",
+            url: "/client/loadDataGroups",
             data: {
                 hienthi: hienthi
             },
@@ -55,7 +55,7 @@ $(document).ready(function () {
                     <div class="block block-rounded h-100 mb-0">
                         <div class="block-header">
                             <div class="flex-grow-1 text-muted fs-sm fw-semibold">
-                                <img class="img-avatar img-avatar32 img-avatar-thumb me-2" src="./public/media/avatars/${group.avatar}">
+                                <img class="img-avatar img-avatar32 img-avatar-thumb me-2" src="/public/media/avatars/${group.avatar}">
                                 <span>${group.hoten}</span>
                             </div>
                             <div class="block-options">
@@ -140,7 +140,7 @@ $(document).ready(function () {
                         <div class="d-md-flex justify-content-md-between align-items-md-center">
                             <div class="p-1 p-md-2">
                                 <h3 class="h4 fw-bold mb-3">
-                                    <a href="./test/start/${test.made}" class="text-dark link-fx">${test.tende}</a>
+                                    <a href="/test/start/${test.made}" class="text-dark link-fx">${test.tende}</a>
                                 </h3>
                                 <p class="fs-sm text-muted mb-0">
                                     <i class="fa fa-clock me-1"></i> Diễn ra từ <span>${format.format(open)}</span> đến <span>${format.format(close)}</span>
@@ -164,7 +164,7 @@ $(document).ready(function () {
                 <li>
                 <a class="d-flex text-dark py-2" href="javascript:void(0)">
                     <div class="flex-shrink-0 mx-3">
-                        <img class="img-avatar img-avatar48" src="./public/media/avatars/${announce.avatar == null ? "avatar2.jpg" : announce.avatar}" alt="">
+                        <img class="img-avatar img-avatar48" src="/public/media/avatars/${announce.avatar == null ? "avatar2.jpg" : announce.avatar}" alt="">
                     </div>
                     <div class="flex-grow-1 fs-sm pe-2">
                         <div class="fw-semibold">${announce.noidung}</div>
@@ -183,7 +183,7 @@ $(document).ready(function () {
     function loadDataTest(manhom) {
         $.ajax({
             type: "post",
-            url: "./test/getTestsGroupWithUserResult",
+            url: "/test/getTestsGroupWithUserResult",
             data: {
                 manhom: manhom
             },
@@ -197,7 +197,7 @@ $(document).ready(function () {
     function loadDataFriend(manhom) {
         $.ajax({
             type: "post",
-            url: "./client/getFriendList",
+            url: "/client/getFriendList",
             data: {
                 manhom: manhom
             },
@@ -212,7 +212,7 @@ $(document).ready(function () {
     {
         $.ajax({
             type: "post",
-            url: "./teacher_announcement/getAnnounce",
+            url: "/teacher_announcement/getAnnounce",
             data: {
                 manhom: manhom
             },
@@ -230,7 +230,7 @@ $(document).ready(function () {
                 html += `<li>
                     <div class="d-flex py-2 align-items-center">
                         <div class="flex-shrink-0 mx-3 overlay-container">
-                            <img class="img-avatar img-avatar48" src="./public/media/avatars/${friend.avatar == null ? "avatar2.jpg" : friend.avatar}" alt="">
+                            <img class="img-avatar img-avatar48" src="/public/media/avatars/${friend.avatar == null ? "avatar2.jpg" : friend.avatar}" alt="">
                         </div>
                         <div class="fw-semibold">${friend.hoten}</div>
                     </div>
@@ -268,7 +268,7 @@ $(document).ready(function () {
     function actionHide(manhom,value,message) {
         $.ajax({
             type: "post",
-            url: "./client/hide",
+            url: "/client/hide",
             data: {
                 manhom: manhom,
                 giatri: value
@@ -306,7 +306,7 @@ $(document).ready(function () {
                 if (result.isConfirmed) {
                     $.ajax({
                         type: "post",
-                        url: "./client/delete",
+                        url: "/client/delete",
                         data: {
                             manhom: $(this).data("id"),
                         },

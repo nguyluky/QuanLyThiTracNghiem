@@ -44,7 +44,7 @@ $(document).ready(function() {
                 </div>`
             });
         } else {
-            html += `<div class="text-center fs-sm"><img style="width:100px" src="./public/media/svg/empty_data.png" alt=""></div>`;
+            html += `<div class="text-center fs-sm"><img style="width:100px" src="/public/media/svg/empty_data.png" alt=""></div>`;
         }
         $("#list-group").html(html);
     }
@@ -67,7 +67,7 @@ $(document).ready(function() {
         let html = "<option></option>";
         $.ajax({
             type: "post",
-            url: "./module/loadData",
+            url: "/module/loadData",
             async: false,
             data: {
                 hienthi: 1
@@ -126,7 +126,7 @@ $(document).ready(function() {
     function getDetail(matb) {
         $.ajax({
             type: "post",
-            url: "./teacher_announcement/getDetail",
+            url: "/teacher_announcement/getDetail",
             data: {
                 matb: matb
             },
@@ -145,7 +145,7 @@ $(document).ready(function() {
             if(getGroupSelected().length != 0) {
                 $.ajax({
                     type: "post",
-                    url: "./teacher_announcement/updateAnnounce",
+                    url: "/teacher_announcement/updateAnnounce",
                     data: {
                         matb: matb,
                         noidung: $("#name-exam").val(),

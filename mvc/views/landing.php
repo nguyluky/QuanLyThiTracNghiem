@@ -60,7 +60,7 @@
                             <div class="row g-6 w-100 py-7 overflow-hidden">
                                 <div
                                     class="col-md-7 order-md-last py-4 d-md-flex align-items-md-center justify-content-md-end">
-                                    <img class="img-fluid animated flipInX" src="./public/media/various/landing.png"
+                                    <img class="img-fluid animated flipInX" src="/public/media/various/landing.png"
                                         alt="Hero Promo">
                                 </div>
                                 <div class="col-md-5 py-4 d-flex align-items-center invisible" data-toggle="appear"
@@ -155,7 +155,7 @@
                 <div class="content content-full">
                     <div class="row">
                         <div class="order-md-1 col-md-6 d-flex align-items-center justify-content-center">
-                            <img src="./public/media/various/landing_1.png" alt="" class="feature__img invisible"
+                            <img src="/public/media/various/landing_1.png" alt="" class="feature__img invisible"
                                 data-toggle="appear" data-class="animated fadeInRight">
                         </div>
                         <div class="order-md-0 col-md-6 d-flex align-items-center">
@@ -191,7 +191,7 @@
                 <div class="content content-full">
                     <div class="row">
                         <div class="order-md-0 col-md-6 d-flex align-items-center justify-content-center">
-                            <img src="./public/media/various/landing_2.png" alt="" class="feature__img invisible"
+                            <img src="/public/media/various/landing_2.png" alt="" class="feature__img invisible"
                                 data-toggle="appear" data-class="animated fadeInLeft">
                         </div>
                         <div class="order-md-1 col-md-6 d-flex align-items-center">
@@ -224,7 +224,7 @@
                 <div class="content content-full">
                     <div class="row">
                         <div class="order-md-1 col-md-6 d-flex align-items-center justify-content-center">
-                            <img src="./public/media/various/landing_3.png" alt="" class="feature__img invisible"
+                            <img src="/public/media/various/landing_3.png" alt="" class="feature__img invisible"
                                 data-toggle="appear" data-class="animated fadeInRight">
                         </div>
                         <div class="order-md-0 col-md-6 d-flex align-items-center">
@@ -361,7 +361,7 @@
                                     mình khi sử dụng hệ thống này.</p>
                             </blockquote>
                             <div class="d-flex align-items-center justify-content-center">
-                                <img class="img-avatar me-4" src="./public/media/avatars/thanhsang.jpg" alt="">
+                                <img class="img-avatar me-4" src="/public/media/avatars/thanhsang.jpg" alt="">
                                 <div class="d-flex flex-column align-items-start">
                                     <div class="mt-2 fw-semibold fs-4">Nguyễn Thanh Sang</div>
                                     <div class="fs-sm text-muted fs-5">Giảng viên</div>
@@ -378,7 +378,7 @@
                                     sẽ biết đến SGU Test hơn.</p>
                             </blockquote>
                             <div class="d-flex align-items-center justify-content-center">
-                                <img class="img-avatar me-4" src="./public/media/avatars/avatar0.jpg" alt="">
+                                <img class="img-avatar me-4" src="/public/media/avatars/avatar0.jpg" alt="">
                                 <div class="d-flex flex-column align-items-start">
                                     <div class="mt-2 fw-semibold fs-4">Hoàng Gia Bảo</div>
                                     <div class="fs-sm text-muted fs-5">31214110069</div>
@@ -392,7 +392,7 @@
                                     ngày theo nhu cầu của các thầy cô giáo và học sinh.</p>
                             </blockquote>
                             <div class="d-flex align-items-center justify-content-center">
-                                <img class="img-avatar me-4" src="./public/media/avatars/avatar0.jpg" alt="">
+                                <img class="img-avatar me-4" src="/public/media/avatars/avatar0.jpg" alt="">
                                 <div class="d-flex flex-column align-items-start">
                                     <div class="mt-2 fw-semibold fs-4">Trần Nhật Sinh</div>
                                     <div class="fs-sm text-muted fs-5">3211410042</div>
@@ -407,7 +407,7 @@
                                     mắc.</p>
                             </blockquote>
                             <div class="d-flex align-items-center justify-content-center">
-                                <img class="img-avatar me-4" src="./public/media/avatars/avatar0.jpg" alt="">
+                                <img class="img-avatar me-4" src="/public/media/avatars/avatar0.jpg" alt="">
                                 <div class="d-flex flex-column align-items-start">
                                     <div class="mt-2 fw-semibold fs-4">Âu Hạo Nhiên</div>
                                     <div class="fs-sm text-muted fs-5">3121410055</div>
@@ -422,7 +422,7 @@
                                     mắc.</p>
                             </blockquote>
                             <div class="d-flex align-items-center justify-content-center">
-                                <img class="img-avatar me-4" src="./public/media/avatars/avatar0.jpg" alt="">
+                                <img class="img-avatar me-4" src="/public/media/avatars/avatar0.jpg" alt="">
                                 <div class="d-flex flex-column align-items-start">
                                     <div class="mt-2 fw-semibold fs-4">Đăng Lê Anh Huy</div>
                                     <div class="fs-sm text-muted fs-5">3121410044</div>

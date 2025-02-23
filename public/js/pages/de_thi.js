@@ -6,7 +6,7 @@ $(document).ready(function () {
   function getQuestion() {
     return $.ajax({
       type: "post",
-      url: "./test/getQuestion",
+      url: "/test/getQuestion",
       data: {
         made: made,
       },
@@ -130,7 +130,7 @@ $(document).ready(function () {
     let thoigian = new Date();
     $.ajax({
       type: "post",
-      url: "./test/submit",
+      url: "/test/submit",
       data: {
         listCauTraLoi: JSON.parse(localStorage.getItem(cautraloi)),
         thoigianlambai: thoigian,
@@ -139,12 +139,12 @@ $(document).ready(function () {
       success: function (response) {
         localStorage.removeItem(cautraloi);
         localStorage.removeItem(dethi);
-        location.href = `./test/start/${made}`;
+        location.href = `/test/start/${made}`;
       },
       error: function (response) {
         localStorage.removeItem(cautraloi);
         localStorage.removeItem(dethi);
-        location.href = `./test/start/${made}`;
+        location.href = `/test/start/${made}`;
       },
     });
   }
@@ -162,7 +162,7 @@ $(document).ready(function () {
       cancelButtonText: "Huỷ",
     }).then((result) => {
       if (result.isConfirmed) {
-        location.href = "./dashboard";
+        location.href = "/dashboard";
       }
     });
   });
@@ -174,7 +174,7 @@ $(document).ready(function () {
     let dethi = $("#dethicontent").data("id");
     $.ajax({
       type: "post",
-      url: "./test/getTimeTest",
+      url: "/test/getTimeTest",
       data: {
         dethi: dethi,
       },
@@ -184,11 +184,11 @@ $(document).ready(function () {
         if (curTime > endTime) {
           localStorage.removeItem(cautraloi);
           localStorage.removeItem(dethi);
-          location.href = `./test/start/${made}`;
+          location.href = `/test/start/${made}`;
         } else {
           $.ajax({
             type: "post",
-            url: "./test/getTimeEndTest",
+            url: "/test/getTimeEndTest",
             data: {
               dethi: dethi,
             },
@@ -230,7 +230,7 @@ $(document).ready(function () {
     if (curTime > endTime) {
       localStorage.removeItem(cautraloi);
       localStorage.removeItem(dethi);
-      location.href = `./test/start/${made}`;
+      location.href = `/test/start/${made}`;
     } else {
       countDown();
     }
@@ -239,7 +239,7 @@ $(document).ready(function () {
   $(window).on("blur", function () {
     $.ajax({
       type: "post",
-      url: "./test/chuyentab",
+      url: "/test/chuyentab",
       data: {
         made: $("#dethicontent").data("id"),
       },

@@ -94,7 +94,7 @@
                                 <div class="d-md-flex justify-content-md-between align-items-md-center">
                                     <div class="p-1 p-md-2">
                                         <h3 class="h4 fw-bold mb-3">
-                                            <a href="./test/start/1" class="text-dark link-fx">Kiểm tra giữa kì</a>
+                                            <a href="/test/start/1" class="text-dark link-fx">Kiểm tra giữa kì</a>
                                         </h3>
                                         <p class="fs-sm text-muted mb-0">
                                             <i class="fa fa-clock me-1"></i> Diễn ra từ <span>12:00 08/03/2023</span>

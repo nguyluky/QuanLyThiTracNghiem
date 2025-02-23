@@ -60,7 +60,7 @@ $(document).ready(function () {
     function loadDataGroup(hienthi) {
         $.ajax({
             type: "post",
-            url: "./module/loadData",
+            url: "/module/loadData",
             data: {
                 hienthi: hienthi
             },
@@ -118,6 +118,10 @@ $(document).ready(function () {
                                     <a class="nav-main-link dropdown-item manhom" href="module/detail/${nhom_item.manhom}">
                                         <i class="nav-main-link-icon si si-info me-2 text-dark"></i>
                                         <span class="nav-main-link-name fw-normal">Danh sách sinh viên</span>
+                                    </a>
+                                    <a class="nav-main-link dropdown-item manhom" href="module/diemdanh/${nhom_item.manhom}">
+                                        <i class="nav-main-link-icon si si-calendar me-2 text-dark"></i>
+                                        <span class="nav-main-link-name fw-normal">Điểm danh</span>
                                     </a>
                                     <a class="nav-main-link dropdown-item btn-update-group" href="javascript:void(0)" data-id="${nhom_item.manhom}" data-role="hocphan" data-action="update">
                                         <i class="nav-main-link-icon si si-pencil me-2 text-dark"></i>
@@ -178,7 +182,7 @@ $(document).ready(function () {
         if($(".form-add-group").valid()) {
             $.ajax({
                 type: "post",
-                url: "./module/add",
+                url: "/module/add",
                 data: {
                     tennhom: $("#ten-nhom").val(),
                     ghichu: $("#ghi-chu").val(),
@@ -259,7 +263,7 @@ $(document).ready(function () {
                 if (result.isConfirmed) {
                     $.ajax({
                         type: "post",
-                        url: "./module/delete",
+                        url: "/module/delete",
                         data: {
                             manhom: $(this).data("id"),
                         },
@@ -315,7 +319,7 @@ $(document).ready(function () {
         return new Promise((resolve, reject) => {
             $.ajax({
                 type: "post",
-                url: "./module/hide",
+                url: "/module/hide",
                 data: {
                     manhom: manhom,
                     giatri: giatri
@@ -338,7 +342,7 @@ $(document).ready(function () {
         $("#update-group").data("id", id)
         $.ajax({
             type: "post",
-            url: "./module/getDetail",
+            url: "/module/getDetail",
             data: {
                 manhom: id
             },
@@ -358,7 +362,7 @@ $(document).ready(function () {
         if($(".form-add-group").valid()) { 
             $.ajax({
                 type: "post",
-                url: "./module/update",
+                url: "/module/update",
                 data: {
                     manhom: $(this).data("id"),
                     tennhom: $("#ten-nhom").val(),

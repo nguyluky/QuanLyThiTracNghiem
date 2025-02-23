@@ -76,7 +76,7 @@ $(document).ready(function () {
         let html = "<option></option>";
         $.ajax({
             type: "post",
-            url: "./module/loadData",
+            url: "/module/loadData",
             async: false,
             data: {
                 hienthi: 1
@@ -113,7 +113,7 @@ $(document).ready(function () {
                 </div>`
             });
         } else {
-            html += `<div class="text-center fs-sm"><img style="width:100px" src="./public/media/svg/empty_data.png" alt=""></div>`;
+            html += `<div class="text-center fs-sm"><img style="width:100px" src="/public/media/svg/empty_data.png" alt=""></div>`;
         }
         $("#list-group").html(html);
     }
@@ -152,7 +152,7 @@ $(document).ready(function () {
             if(getGroupSelected().length != 0) {
                 $.ajax({
                     type: "post",
-                    url: "./teacher_announcement/sendAnnouncement",
+                    url: "/teacher_announcement/sendAnnouncement",
                     data: {
                         noticeText: $("#name-exam").val(),
                         mamonhoc: groups[$("#nhom-hp").val()].mamonhoc,
@@ -162,7 +162,7 @@ $(document).ready(function () {
                     dataType: "json",
                     success: function (response) {
                         if (response) {
-                            location.href = "./teacher_announcement";
+                            location.href = "/teacher_announcement";
                         } else {
                             Dashmix.helpers('jq-notify', { type: 'danger', icon: 'fa fa-times me-1', message: 'Gửi thông báo không thành công!' });
                         }
@@ -178,7 +178,7 @@ $(document).ready(function () {
     function loadListAnnounces() {
         return $.ajax({
             type: "post",
-            url: "./teacher_announcement/getListAnnounce",
+            url: "/teacher_announcement/getListAnnounce",
             dataType: "json",
             success: function (data) {
                 showListAnnounce(data);
@@ -220,7 +220,7 @@ $(document).ready(function () {
                 if (t.value == true) {
                     $.ajax({
                         type: "post",
-                        url: "./teacher_announcement/deleteAnnounce",
+                        url: "/teacher_announcement/deleteAnnounce",
                         data: {
                             matb: $(this).data("id")
                         },

@@ -15,7 +15,7 @@ function showData(data) {
         <td class="text-center">${Element["manguoidung"]}</td>
         <td class="fs-sm d-flex align-items-center">
             <img class="img-avatar img-avatar48 me-3"
-                src="./public/media/avatars/${
+                src="/public/media/avatars/${
                   Element["avatar"] == null ? "avatar2.jpg" : Element["avatar"]
                 }" alt="${Element["hoten"]}">
             <div class="d-flex flex-column">
@@ -65,7 +65,7 @@ $(document).ready(function () {
     let made = $(this).data("id");
     $.ajax({
       type: "post",
-      url: "./test/getQuestionOfTestManual",
+      url: "/test/getQuestionOfTestManual",
       data: {
         made: made,
       },
@@ -179,7 +179,7 @@ $(document).ready(function () {
     } else {
       $.ajax({
         type: "post",
-        url: "./test/getResultDetail",
+        url: "/test/getResultDetail",
         data: {
           makq: makq,
           made: made,
@@ -308,7 +308,7 @@ $(document).ready(function () {
     let makq = $(this).data("id");
     if(makq != "") {
       $.ajax({
-        url: `./test/exportPdf/${makq}`,
+        url: `/test/exportPdf/${makq}`,
         method: "POST",
         success: function (response) {
           // Tạo tệp blob từ chuỗi base64
@@ -350,7 +350,7 @@ $(document).ready(function () {
     console.log(ds)
     $.ajax({
       method: "post",
-      url: "./test/exportExcel",
+      url: "/test/exportExcel",
       dataType: "json",
       data: {
         made: made,
@@ -388,7 +388,7 @@ $(".filtered-by-static").click(function (e) {
 function getStatictical() {
   $.ajax({
     type: "post",
-    url: "./test/getStatictical",
+    url: "/test/getStatictical",
     data: {
       made: made,
       manhom: $(".filtered-by-static.active").data("id"),

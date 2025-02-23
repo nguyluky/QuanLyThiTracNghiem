@@ -5,7 +5,7 @@ let groups = [];
 function getToTalQuestionOfChapter(chuong, monhoc, dokho) {
   var result = 0;
   $.ajax({
-    url: "./question/getsoluongcauhoi",
+    url: "/question/getsoluongcauhoi",
     type: "post",
     data: {
       chuong: chuong,
@@ -186,7 +186,7 @@ $(document).ready(function () {
     let html = "<option></option>";
     $.ajax({
       type: "post",
-      url: "./module/loadData",
+      url: "/module/loadData",
       async: false,
       data: {
         hienthi: 1,
@@ -224,7 +224,7 @@ $(document).ready(function () {
     $("#chuong").val("").trigger("change");
     $.ajax({
       type: "post",
-      url: "./subject/getAllChapter",
+      url: "/subject/getAllChapter",
       async: false,
       data: {
         mamonhoc: mamonhoc,
@@ -258,7 +258,7 @@ $(document).ready(function () {
                 </div>`;
       });
     } else {
-      html += `<div class="text-center fs-sm"><img style="width:100px" src="./public/media/svg/empty_data.png" alt=""></div>`;
+      html += `<div class="text-center fs-sm"><img style="width:100px" src="/public/media/svg/empty_data.png" alt=""></div>`;
     }
     $("#list-group").html(html);
   }
@@ -294,7 +294,7 @@ $(document).ready(function () {
       if (getGroupSelected().length != 0) {
         $.ajax({
           type: "post",
-          url: "./test/addTest",
+          url: "/test/addTest",
           data: {
             mamonhoc: groups[$("#nhom-hp").val()].mamonhoc,
             tende: $("#name-exam").val(),
@@ -316,8 +316,8 @@ $(document).ready(function () {
           },
           success: function (response) {
             if (response) {
-              if ($("#tudongsoande").prop("checked")) location.href = "./test";
-              else location.href = `./test/select/${response}`;
+              if ($("#tudongsoande").prop("checked")) location.href = "/test";
+              else location.href = `/test/select/${response}`;
             } else {
               Dashmix.helpers("jq-notify", {
                 type: "danger",
@@ -344,7 +344,7 @@ $(document).ready(function () {
   function getDetail(made) {
     return $.ajax({
       type: "post",
-      url: "./test/getDetail",
+      url: "/test/getDetail",
       data: {
         made: made,
       },
@@ -354,7 +354,7 @@ $(document).ready(function () {
           $("#btn-update-quesoftest").show();
           $("#btn-update-quesoftest").attr(
             "href",
-            `./test/select/${response.made}`
+            `/test/select/${response.made}`
           );
         }
         infodethi = response;
@@ -498,7 +498,7 @@ $(document).ready(function () {
       let socaukho = $("#kho").val();
       $.ajax({
         type: "post",
-        url: "./test/updateTest",
+        url: "/test/updateTest",
         data: {
           made: made,
           mamonhoc: groups[$("#nhom-hp").val()].mamonhoc,
@@ -528,9 +528,9 @@ $(document).ready(function () {
                   infodethi.socautb != socautb ||
                   infodethi.socaukho != socaukho))
             ) {
-              location.href = `./test/select/${made}`;
+              location.href = `/test/select/${made}`;
             } else {
-              location.href = `./test`;
+              location.href = `/test`;
             }
           } else {
             Dashmix.helpers("jq-notify", {

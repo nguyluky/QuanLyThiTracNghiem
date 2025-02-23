@@ -20,7 +20,7 @@ function getAnswerListForQuestion(questions) {
     const arrMaCauHoi = questions.map(question => +question.macauhoi);
     $.ajax({
         type: "post",
-        url: "./question/getAnswersForMultipleQuestions",
+        url: "/question/getAnswersForMultipleQuestions",
         data: {
             questions: arrMaCauHoi,
         },
@@ -71,7 +71,7 @@ function showListQuestion(questions) {
 function getInfoTest() {
     return $.ajax({
         type: "post",
-        url: "./test/getDetail",
+        url: "/test/getDetail",
         data: {
             made: made
         },
@@ -85,7 +85,7 @@ function getInfoTest() {
 function getQuestionOfTest() {
     return $.ajax({
         type: "post",
-        url: "./test/getQuestionOfTestManual",
+        url: "/test/getQuestionOfTestManual",
         data: {made: made},
         dataType: "json",
         success: function (response) {
@@ -177,7 +177,7 @@ $.when(getInfoTest(),getQuestionOfTest()).done(function(){
         let ans = [];
         $.ajax({
             type: "post",
-            url: "./question/getAnswerById",
+            url: "/question/getAnswerById",
             data: {
                 id: macauhoi
             },
@@ -231,7 +231,7 @@ $.when(getInfoTest(),getQuestionOfTest()).done(function(){
         if(arr_slch[1] == slgioihan[1] && arr_slch[2] == slgioihan[2] && arr_slch[3] == slgioihan[3]) {
             $.ajax({
                 type: "post",
-                url: "./test/addDetail",
+                url: "/test/addDetail",
                 data: {
                     made: infoTest.made,
                     cauhoi: arrQuestion
@@ -240,7 +240,7 @@ $.when(getInfoTest(),getQuestionOfTest()).done(function(){
                     if(response) {
                         Dashmix.helpers('jq-notify', { type: 'success', icon: 'fa fa-check me-1', message: 'Thêm câu hỏi thành công!' });
                         setTimeout(function () {
-                            location.href = `./test/update/${made}`;
+                            location.href = `/test/update/${made}`;
                         }, 3000);
                     } else {
                         Dashmix.helpers('jq-notify', { type: 'danger', icon: 'fa fa-times me-1', message: 'Tạo đề không thành công!' });
@@ -255,7 +255,7 @@ $.when(getInfoTest(),getQuestionOfTest()).done(function(){
     function loadDataChapter(mamon) {
         return $.ajax({
             type: "post",
-            url: "./subject/getAllChapter",
+            url: "/subject/getAllChapter",
             data: {
                 mamonhoc: mamon
             },

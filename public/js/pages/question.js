@@ -261,7 +261,7 @@ $(document).ready(function () {
     let html = "<option></option>";
     $.ajax({
       type: "post",
-      url: "./subject/getAllChapter",
+      url: "/subject/getAllChapter",
       data: {
         mamonhoc: selectedValue,
       },
@@ -281,7 +281,7 @@ $(document).ready(function () {
     let html = "<option></option>";
     $.ajax({
       type: "post",
-      url: "./subject/getAllChapter",
+      url: "/subject/getAllChapter",
       data: {
         mamonhoc: mamonhoc,
       },
@@ -331,7 +331,7 @@ $(document).ready(function () {
     formData.append("fileToUpload", file);
     $.ajax({
       type: "post",
-      url: "./question/xulyDocx",
+      url: "/question/xulyDocx",
       data: formData,
       contentType: false,
       processData: false,
@@ -357,7 +357,7 @@ $(document).ready(function () {
     formData.append("fileToUpload", file);
     $.ajax({
       type: "post",
-      url: "./question/addExcel",
+      url: "/question/addExcel",
       data: formData,
       contentType: false,
       processData: false,
@@ -433,7 +433,7 @@ $(document).ready(function () {
             let noidung = CKEDITOR.instances["js-ckeditor"].getData();
             $.ajax({
               type: "post",
-              url: "./question/addQues",
+              url: "/question/addQues",
               data: {
                 mamon: mamonhoc,
                 machuong: machuong,
@@ -498,7 +498,7 @@ $(document).ready(function () {
   $("#nhap-file").click(function () {
     $.ajax({
       type: "post",
-      url: "./question/addQuesFile",
+      url: "/question/addQuesFile",
       data: {
         monhoc: $("#monhocfile").val(),
         chuong: $("#chuongfile").val(),
@@ -548,7 +548,7 @@ $(document).ready(function () {
     ) {
       $.ajax({
         type: "post",
-        url: "./question/editQuesion",
+        url: "/question/editQuesion",
         data: {
           id: id,
           mamon: mamonhoc,
@@ -623,7 +623,7 @@ $(document).ready(function () {
   function getQuestionById(id) {
     $.ajax({
       type: "post",
-      url: "./question/getQuestionById",
+      url: "/question/getQuestionById",
       data: {
         id: id,
       },
@@ -645,7 +645,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "post",
-      url: "./question/getAnswerById",
+      url: "/question/getAnswerById",
       data: {
         id: id,
       },
@@ -698,7 +698,7 @@ $(document).ready(function () {
       if (t.value == true) {
         $.ajax({
           type: "post",
-          url: "./question/delete",
+          url: "/question/delete",
           data: {
             macauhoi: trid,
           },

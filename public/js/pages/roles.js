@@ -45,7 +45,7 @@ $(document).ready(function () {
             if(roles.length != 0) {
                 $.ajax({
                     type: "post",
-                    url: "./roles/add",
+                    url: "/roles/add",
                     data: {
                         name: $("#ten-nhom-quyen").val(),
                         roles: roles
@@ -134,7 +134,7 @@ $(document).ready(function () {
             if (t.value == true) {
                 $.ajax({
                     type: "post",
-                    url: "./roles/delete",
+                    url: "/roles/delete",
                     data: {
                         id: id
                     },
@@ -163,7 +163,7 @@ $(document).ready(function () {
         $("[name='manhomquyen']").val(manhomquyen);
         $.ajax({
             type: "post",
-            url: "./roles/getDetail",
+            url: "/roles/getDetail",
             data: {
                 manhomquyen: manhomquyen
             },
@@ -186,7 +186,7 @@ $(document).ready(function () {
             if(roles.length != 0) {
                 $.ajax({
                     type: "post",
-                    url: "./roles/edit",
+                    url: "/roles/edit",
                     data: {
                         id: $("[name='manhomquyen']").val(),
                         name: $("#ten-nhom-quyen").val(),
